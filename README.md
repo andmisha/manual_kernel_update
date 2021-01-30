@@ -132,7 +132,7 @@ PS C:\OTUS\manual_kernel_update> vagrant box list
 centos-7-5 (virtualbox, 0)
 centos/7   (virtualbox, 2004.01)
 ```
-#### 15) Сделал отдельную папку centos-7-5 с Vagrantfile на основе manual_kernel_update, переименовав box в centos-7-5
+#### 15) Сделал отдельную папку centos-7-5 с Vagrantfile на основе manual_kernel_update, переименовав :box_name => "centos-7-5"
 #### 16) Сделал vagrant up
 #### 17) И проверил версию ядра
 ```
