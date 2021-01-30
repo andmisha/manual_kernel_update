@@ -62,6 +62,7 @@ sudo reboot
 C:\HashiCorp\Packer\packer.exe build -force C:\OTUS\manual_kernel_update\packer\centos.json
 ```
 Параметр -force использовал для того, чтобы Packer затерал все, что было в предыдущий запуск, так как заработало все не с первого раза
+
 Проблемы:
 - Packer выполнялся с ошибкой
 ```
