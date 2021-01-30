@@ -1,7 +1,7 @@
 # Describe VMs
 MACHINES = {
-  # VM name "andmisha_centos-7-5"
-  :"andmisha_centos-7-5" => {
+  # VM name "andmisha-centos-7-5"
+  :"andmisha-centos-7-5" => {
               # VM box
               :box_name => "andmisha/centos-7-5",
               # VM CPU count
