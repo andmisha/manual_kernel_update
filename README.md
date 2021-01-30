@@ -94,6 +94,7 @@ detail.
 ```
 Проверил на работающей ВМ (на той, что создается в момент выполнения Packer) - файл /etc/sudoers.d/vagrant на месте и содержимое визуально корректное.
 В итоге заменил в файле packer/http/vagrant.ks команды создания файла в sudoers.d и запись содержимого в него
+
 Было так:
 ```
 # Add vagrant to sudoers
@@ -103,6 +104,7 @@ detail.
 #/bin/chmod 0440 /etc/sudoers.d/vagrant
 #/bin/sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 ```
+
 Стало так:
 ```
 # Add vagrant to sudoers
