@@ -150,3 +150,4 @@ Failed to create box andmisha/centos-7-5
 Vagrant Cloud request failed - Resource not found!
 ```
 Поэтому выполнил загрузку в ручную, ссылка - https://app.vagrantup.com/andmisha/boxes/centos-7-5/versions/1.0
+Vagrant файл загрузил обновленный
