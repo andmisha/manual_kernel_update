@@ -126,7 +126,7 @@ Build 'centos-7.7' finished after 12 minutes 23 seconds.
 ```
 PS C:\OTUS\manual_kernel_update> vagrant box add --name centos-7-5 .\packer\centos-7.7.1908-kernel-5-x86_64-Minimal.box
 ```
-#### 14) Проверил, что импорт проше успешно
+#### 14) Проверил, что импорт прошел успешно
 ```
 PS C:\OTUS\manual_kernel_update> vagrant box list
 centos-7-5 (virtualbox, 0)
