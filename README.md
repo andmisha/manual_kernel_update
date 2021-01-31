@@ -9,32 +9,29 @@
 #### 2) Зарегистрировал аккаунты:
 - GitHub - https://github.com/andmisha
 - VagrantCloud - https://app.vagrantup.com/andmisha
-#### 3) Зарегистрировал аккаунты:
-- GitHub - https://github.com/andmisha
-- VagrantCloud - https://app.vagrantup.com/andmisha
-#### 4) Сделал fork репозитория https://github.com/dmitry-lyutenko/manual_kernel_update:
+#### 3) Сделал fork репозитория https://github.com/dmitry-lyutenko/manual_kernel_update:
 Ссылка на форк - https://github.com/andmisha/manual_kernel_update
-#### 5) Сделал git clone репозитория своего репозитория https://github.com/andmisha/manual_kernel_update на свой ПК
-#### 6) Запустил виртуальную машину
+#### 4) Сделал git clone репозитория своего репозитория https://github.com/andmisha/manual_kernel_update на свой ПК
+#### 5) Запустил виртуальную машину
 ```
 vagrant up
 ```
 Так как я делал задание на Windows, vagrant нормально заработал только через консоль PowerShell. В частности vagrant ssh заработал у меня только так, так как получился конфликт
 c OpenSSH, который идет по умолчанию в Windows 10 Pro x64 1909 (C:\Windows\System32\OpenSSH)
-#### 7) Проверил текущую версию ядра
+#### 6) Проверил текущую версию ядра
 ```
 [vagrant@kernel-update ~]$ uname -r
 3.10.0-1127.el7.x86_64
 ```
-#### 8) Добавил репозиторий ElRepo
+#### 7) Добавил репозиторий ElRepo
 ```
 [vagrant@kernel-update ~]$ sudo yum install -y http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 ```
-#### 9) Запустил установку ядра kernel-ml (ml-свежая стабильная версия, lt-свежая стабильная версия c long term)
+#### 8) Запустил установку ядра kernel-ml (ml-свежая стабильная версия, lt-свежая стабильная версия c long term)
 ```
 [vagrant@kernel-update ~]$ sudo yum --enablerepo elrepo-kernel install kernel-ml -y
 ```
-#### 10) Обновил загрузчик Grub
+#### 9) Обновил загрузчик Grub
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 Получил вывод команды об успешном обновлении и список текущих найденных ядер в системе
 ```
@@ -45,19 +42,19 @@ Found linux image: /boot/vmlinuz-3.10.0-1127.el7.x86_64
 Found initrd image: /boot/initramfs-3.10.0-1127.el7.x86_64.img
 done
 ```
-#### 11) Сделал загрузку системы с новым ядром по умолчанию и перезагрузку виртуальной машины
+#### 10) Сделал загрузку системы с новым ядром по умолчанию и перезагрузку виртуальной машины
 ```
 sudo grub2-set-default 0
 sudo reboot
 ```
-#### 12) После загрузки системы проверил версию ядра
+#### 11) После загрузки системы проверил версию ядра
 ```
 [vagrant@kernel-update ~]$ uname -r
 5.10.12-1.el7.elrepo.x86_64
 ```
 ---
 Далее необходимо создать свой box для Vagrant с подготовленной ВМ с новым ядром и загрузить его на VagrantCloud
-#### 13) С помощью Packer запустил создание box (в моем случае на Windows команда запуска выглядела так)
+#### 12) С помощью Packer запустил создание box (в моем случае на Windows команда запуска выглядела так)
 ```
 C:\HashiCorp\Packer\packer.exe build -force C:\OTUS\manual_kernel_update\packer\centos.json
 ```
